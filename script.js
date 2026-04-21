@@ -222,7 +222,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(sec => sectionObserver.observe(sec));
 
 /* ── Initialize EmailJS ── */
-emailjs.init('service_57qls9u'); // Initialize with public key
+emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
 
 /* ── Contact Form Validation & Submission ── */
 const contactForm = document.getElementById('contactForm');
@@ -270,7 +270,7 @@ if (contactForm) {
     submitBtn.disabled = true;
 
     try {
-      const response = await emailjs.send('service_gerald_portfolio', 'template_gerald_contact', {
+      const response = await emailjs.send('service_57qlsdu', 'template_hhz0mx5', {
         from_name: name.value.trim(),
         from_email: email.value.trim(),
         subject: subject.value.trim() || 'No subject',
