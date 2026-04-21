@@ -221,14 +221,19 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(sec => sectionObserver.observe(sec));
 
+/* ── Initialize EmailJS ── */
+emailjs.init('service_57qls9u'); // Initialize with public key
+
 /* ── Contact Form Validation & Submission ── */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     let valid = true;
 
     const name    = document.getElementById('name');
     const email   = document.getElementById('email');
+    const subject = document.getElementById('subject');
     const message = document.getElementById('message');
     const nameErr = document.getElementById('nameError');
     const emailErr = document.getElementById('emailError');
@@ -265,13 +270,15 @@ if (contactForm) {
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(contactForm)
+      const response = await emailjs.send('service_gerald_portfolio', 'template_gerald_contact', {
+        from_name: name.value.trim(),
+        from_email: email.value.trim(),
+        subject: subject.value.trim() || 'No subject',
+        message: message.value.trim(),
+        reply_to: email.value.trim()
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         btnLoading.style.display = 'none';
         submitBtn.style.display = 'none';
         const successMsg = document.getElementById('formSuccess');

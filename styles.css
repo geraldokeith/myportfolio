@@ -884,8 +884,9 @@ section {
 /* ════════════════ CONTACT ════════════════ */
 #contact { background: var(--bg-2); }
 .contact-grid {
-  display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
   align-items: start; margin-top: 2rem;
+  max-width: 100%;
 }
 .contact-info h3 {
   font-family: var(--font-display);

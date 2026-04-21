@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
 </head>
 <body>
 
@@ -580,16 +581,16 @@
           </div>
         </div>
 
-        <form class="contact-form scroll-reveal delay-2" id="contactForm" action="https://formspree.io/f/xyzqpwpr" method="POST" novalidate>
+        <form class="contact-form scroll-reveal delay-2" id="contactForm" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Name" required />
+              <input type="text" id="name" name="name" placeholder="Your Name" required />
               <span class="field-error" id="nameError">Please enter your name</span>
             </div>
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
               <span class="field-error" id="emailError">Please enter a valid email</span>
             </div>
           </div>
@@ -602,8 +603,6 @@
             <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
             <span class="field-error" id="messageError">Please enter a message</span>
           </div>
-          <input type="hidden" name="_subject" value="New Portfolio Message from {{name}}" />
-          <input type="hidden" name="_next" value="" />
           <button type="submit" class="btn-primary form-submit" id="submitBtn">
             <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
             <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
