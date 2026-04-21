@@ -224,11 +224,13 @@ sections.forEach(sec => sectionObserver.observe(sec));
 /* ── Initialize EmailJS ── */
 function initEmailJS() {
   if (typeof emailjs !== 'undefined') {
+    console.log('EmailJS loaded successfully');
     emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
+    console.log('EmailJS initialized');
     setupContactForm();
   } else {
-    console.error('EmailJS library failed to load');
-    setTimeout(initEmailJS, 100); // Retry after 100ms
+    console.warn('EmailJS not loaded yet, retrying...');
+    setTimeout(initEmailJS, 500); // Retry after 500ms
   }
 }
 
