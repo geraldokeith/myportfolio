@@ -270,13 +270,15 @@ if (contactForm) {
     submitBtn.disabled = true;
 
     try {
-      const response = await emailjs.send('service_57qlsdu', 'template_hhz0mx5', {
+      const templateData = {
         from_name: name.value.trim(),
         from_email: email.value.trim(),
         subject: subject.value.trim() || 'No subject',
         message: message.value.trim(),
         reply_to: email.value.trim()
-      });
+      };
+      console.log('Sending to EmailJS:', templateData);
+      const response = await emailjs.send('service_57qlsdu', 'template_hhz0mx5', templateData);
 
       if (response.status === 200) {
         btnLoading.style.display = 'none';
