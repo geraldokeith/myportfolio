@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agonzebwa Gerald — Full-Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">AG</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">AG<span class="dot">.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mob-link">About</a>
+    <a href="#stack" class="mob-link">Stack</a>
+    <a href="#projects" class="mob-link">Projects</a>
+    <a href="#experience" class="mob-link">Experience</a>
+    <a href="#contact" class="mob-link">Contact</a>
+  </div>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for hire · Kampala, Uganda
+      </div>
+
+      <h1 class="hero-name reveal-up delay-1">
+        Agonzebwa<br /><span class="name-accent">Gerald</span>
+      </h1>
+
+      <div class="hero-title reveal-up delay-2">
+        <span class="static-text">Full-Stack Developer &amp; </span>
+        <span class="typed-text" id="typedText"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-desc reveal-up delay-3">
+        Crafting digital experiences that marry elegant code with purposeful design.
+        3+ years building scalable WordPress solutions, web apps, and interactive platforms.
+      </p>
+
+      <div class="hero-actions reveal-up delay-4">
+        <a href="#projects" class="btn-primary">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+        <a href="#contact" class="btn-outline">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+        <a href="#" class="btn-ghost" download>
+          <i class="fas fa-download"></i> Download CV
+        </a>
+      </div>
+
+      <div class="hero-socials reveal-up delay-5">
+        <a href="https://github.com" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:geraldo2keith@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal-right delay-2">
+      <div class="avatar-frame">
+        <div class="avatar-placeholder">
+          <img src="geraldkeith.png" alt="Gerald Avatar" class="avatar-image" />
+        </div>
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="floating-card card-1">
+          <i class="fab fa-wordpress"></i>
+          <span>WordPress Dev</span>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-code"></i>
+          <span>Full-Stack</span>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-star"></i>
+          <span>3+ Years Exp</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats reveal-up delay-5">
+      <div class="stat-item">
+        <span class="stat-num" data-target="15">0</span>
+        <span class="stat-label">Projects Done</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="3">0</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="10">0</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"><div class="scroll-dot"></div></div>
+    </a>
+  </section>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label scroll-reveal">About Me</div>
+      <div class="about-grid">
+        <div class="about-left scroll-reveal">
+          <h2 class="section-title">
+            Building the web,<br /><span class="accent">one commit</span> at a time.
+          </h2>
+          <p class="about-text">
+            I'm a Full-Stack Developer based in Kampala, Uganda, with a strong focus on WordPress development and modern web technologies. With 2+ years of hands-on experience, I bridge the gap between clean backend logic and intuitive user interfaces.
+          </p>
+          <p class="about-text">
+            My background spans enterprise WordPress builds, custom theme & plugin development, Python/Django APIs, and frontend frameworks. I thrive in debugging complex systems and translating business needs into technical solutions.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kampala, Uganda</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Information Systems & Technology </span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-briefcase"></i>
+              <span>Open to Remote Roles</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fab fa-wordpress"></i>
+              <span>WordPress Specialist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right scroll-reveal delay-2">
+          <div class="about-card-grid">
+            <div class="about-mini-card">
+              <div class="mini-icon"><i class="fas fa-layer-group"></i></div>
+              <h4>Full-Stack Dev</h4>
+              <p>End-to-end solutions from DB to UI</p>
+            </div>
+            <div class="about-mini-card">
+              <div class="mini-icon"><i class="fab fa-wordpress"></i></div>
+              <h4>WordPress Expert</h4>
+              <p>Custom themes, plugins & headless WP</p>
+            </div>
+            <div class="about-mini-card">
+              <div class="mini-icon"><i class="fas fa-bug"></i></div>
+              <h4>Debugger Pro</h4>
+              <p>Technical support & system optimization</p>
+            </div>
+            <div class="about-mini-card">
+              <div class="mini-icon"><i class="fas fa-mobile-alt"></i></div>
+              <h4>Responsive Design</h4>
+              <p>Mobile-first, accessible interfaces</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ TECH STACK ═══════════════ -->
+  <section id="stack">
+    <div class="container">
+      <div class="section-label scroll-reveal">Skills & Tools</div>
+      <h2 class="section-title text-center scroll-reveal">
+        My <span class="accent">Tech Stack</span>
+      </h2>
+      <p class="section-sub scroll-reveal">Technologies I use to build remarkable digital products</p>
+
+      <div class="stack-groups">
+
+        <div class="stack-group scroll-reveal">
+          <div class="group-label"><i class="fab fa-wordpress"></i> WordPress & CMS</div>
+          <div class="stack-grid">
+            <div class="tech-card" data-skill="95">
+              <div class="tech-icon wp"><i class="fab fa-wordpress"></i></div>
+              <span>WordPress</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="80">
+              <div class="tech-icon php"><i class="fab fa-php"></i></div>
+              <span>PHP</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="75">
+              <div class="tech-icon db"><i class="fas fa-database"></i></div>
+              <span>MySQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-group scroll-reveal delay-1">
+          <div class="group-label"><i class="fas fa-server"></i> Backend</div>
+          <div class="stack-grid">
+            <div class="tech-card" data-skill="70">
+              <div class="tech-icon py"><i class="fab fa-python"></i></div>
+              <span>Python</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="65">
+              <div class="tech-icon dj"><i class="fas fa-cog"></i></div>
+              <span>Django</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="75">
+              <div class="tech-icon db"><i class="fas fa-database"></i></div>
+              <span>MySQL</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="75">
+              <div class="tech-icon db"><i class="fas fa-database"></i></div>
+              <span>postgresql</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-group scroll-reveal delay-2">
+          <div class="group-label"><i class="fas fa-palette"></i> Frontend</div>
+          <div class="stack-grid">
+            <div class="tech-card" data-skill="90">
+              <div class="tech-icon html"><i class="fab fa-html5"></i></div>
+              <span>HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="85">
+              <div class="tech-icon css"><i class="fab fa-css3-alt"></i></div>
+              <span>CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="80">
+              <div class="tech-icon tw"><i class="fas fa-wind"></i></div>
+              <span>Tailwind</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="78">
+              <div class="tech-icon bs"><i class="fab fa-bootstrap"></i></div>
+              <span>Bootstrap</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="82">
+              <div class="tech-icon js"><i class="fab fa-js"></i></div>
+              <span>JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="60">
+              <div class="tech-icon ts"><i class="fas fa-code"></i></div>
+              <span>TypeScript</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:60%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="68">
+              <div class="tech-icon react"><i class="fab fa-react"></i></div>
+              <span>React</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:68%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="65">
+              <div class="tech-icon vue"><i class="fab fa-vuejs"></i></div>
+              <span>Vue.js</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-group scroll-reveal delay-3">
+          <div class="group-label"><i class="fas fa-tools"></i> Tools & Workflow</div>
+          <div class="stack-grid">
+            <div class="tech-card" data-skill="88">
+              <div class="tech-icon git"><i class="fab fa-git-alt"></i></div>
+              <span>Git</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="88">
+              <div class="tech-icon gh"><i class="fab fa-github"></i></div>
+              <span>GitHub</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="tech-card" data-skill="70">
+              <div class="tech-icon pm"><i class="fas fa-paper-plane"></i></div>
+              <span>Postman</span>
+              <div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-label scroll-reveal">Portfolio</div>
+      <h2 class="section-title text-center scroll-reveal">
+        Featured <span class="accent">Projects</span>
+      </h2>
+      <p class="section-sub scroll-reveal">Real products built with real purpose</p>
+
+      <div class="projects-grid">
+
+        <!-- KFLIX -->
+        <div class="project-card scroll-reveal" data-tilt>
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon kflix"><i class="fas fa-film"></i></div>
+            <div class="project-status status-progress">In Progress</div>
+          </div>
+          <h3 class="project-title">KFLIX</h3>
+          <p class="project-subtitle">Digital Streaming Platform</p>
+          <p class="project-desc">
+            Large-scale media streaming platform featuring rich content libraries, user authentication, subscription management, and interactive media players. Built for seamless cross-device viewing experiences.
+          </p>
+          <div class="project-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">REST API</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="proj-btn primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+            <a href="#" class="proj-btn outline"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Pharmacy -->
+        <div class="project-card scroll-reveal delay-1" data-tilt>
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon pharma"><i class="fas fa-pills"></i></div>
+            <div class="project-status status-complete">Completed</div>
+          </div>
+          <h3 class="project-title">Rahisipharm</h3>
+          <p class="project-subtitle">Pharmacy Inventory Management System</p>
+          <p class="project-desc">
+            Full-featured inventory management system for pharmacies with real-time stock tracking, low-stock alerts, expiry management, supplier records, and comprehensive reporting dashboards.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Django</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">Python</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST API</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="proj-btn primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+            <a href="#" class="proj-btn outline"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- NutriLife -->
+        <div class="project-card scroll-reveal delay-2" data-tilt>
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon nutri"><i class="fas fa-heartbeat"></i></div>
+            <div class="project-status status-concept">Concept</div>
+          </div>
+          <h3 class="project-title">NutriLife</h3>
+          <p class="project-subtitle">Health & Wellness Platform</p>
+          <p class="project-desc">
+            Comprehensive wellness super-app combining appointment booking, health professional job listings, food ordering from nutritionists, gym session scheduling, and personalized wellness tracking.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Django</span>
+            <span class="tag">Python</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="proj-btn primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+            <a href="#" class="proj-btn outline"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Vote Monitor -->
+        <div class="project-card scroll-reveal delay-3" data-tilt>
+          <div class="project-glow"></div>
+          <div class="project-top">
+            <div class="project-icon vote"><i class="fas fa-vote-yea"></i></div>
+            <div class="project-status status-progress">In Progress</div>
+          </div>
+          <h3 class="project-title">VoteWatch</h3>
+          <p class="project-subtitle">Vote Monitoring Application</p>
+          <p class="project-desc">
+            Robust election monitoring platform for structured data collection from polling stations, multi-level validation workflows, real-time tally aggregation, and comprehensive audit-ready reporting.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Django</span>
+            <span class="tag">Python</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Chart.js</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="proj-btn primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+            <a href="#" class="proj-btn outline"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-label scroll-reveal">Work History</div>
+      <h2 class="section-title text-center scroll-reveal">
+        Professional <span class="accent">Experience</span>
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item scroll-reveal" data-side="left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company-icon impact">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <div class="tl-meta">
+                <h3 class="tl-role">Director of Creatives & Web Developer</h3>
+                <div class="tl-company">ImpactPlus Media</div>
+                <div class="tl-period">
+                  <i class="fas fa-calendar-alt"></i> 2022 – Present
+                </div>
+              </div>
+            </div>
+            <ul class="tl-responsibilities">
+              <li><i class="fas fa-chevron-right"></i> Led creative direction and web strategy for digital campaigns</li>
+              <li><i class="fas fa-chevron-right"></i> Developed and maintained multiple WordPress websites and custom themes</li>
+              <li><i class="fas fa-chevron-right"></i> Built RESTful APIs and integrated third-party services</li>
+              <li><i class="fas fa-chevron-right"></i> Managed a team of designers and junior developers</li>
+              <li><i class="fas fa-chevron-right"></i> Optimized site performance and implemented SEO best practices</li>
+            </ul>
+            <div class="tl-tags">
+              <span>WordPress</span><span>PHP</span><span>JavaScript</span><span>Creative Direction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item scroll-reveal delay-2" data-side="right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company-icon gospel">
+                <i class="fas fa-tv"></i>
+              </div>
+              <div class="tl-meta">
+                <h3 class="tl-role">IT Support Specialist</h3>
+                <div class="tl-company">Gospel Mission Channel</div>
+                <div class="tl-period">
+                  <i class="fas fa-calendar-alt"></i> 2021 – 2022
+                </div>
+              </div>
+            </div>
+            <ul class="tl-responsibilities">
+              <li><i class="fas fa-chevron-right"></i> Provided technical support for broadcast and IT infrastructure</li>
+              <li><i class="fas fa-chevron-right"></i> Maintained and troubleshot network systems and workstations</li>
+              <li><i class="fas fa-chevron-right"></i> Managed content management systems for digital publishing</li>
+              <li><i class="fas fa-chevron-right"></i> Assisted in website updates and digital content workflows</li>
+            </ul>
+            <div class="tl-tags">
+              <span>IT Support</span><span>Networking</span><span>CMS</span><span>Troubleshooting</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label scroll-reveal">Get In Touch</div>
+      <h2 class="section-title text-center scroll-reveal">
+        Let's <span class="accent">Work Together</span>
+      </h2>
+      <p class="section-sub scroll-reveal">Have a project in mind? I'd love to hear about it.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info scroll-reveal">
+          <h3>Reach Out Directly</h3>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div class="ci-content">
+                <span class="ci-label">Email</span>
+                <a href="mailto:gerald02keith@gmail.com" class="ci-value">geraldo2keith@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-phone"></i></div>
+              <div class="ci-content">
+                <span class="ci-label">Phone</span>
+                <a href="tel:+256700000000" class="ci-value">+256 762 396 176</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="ci-content">
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Kampala, Uganda</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          </div>
+
+          <div class="availability-badge">
+            <span class="avail-dot"></span>
+            Currently available for freelance & full-time opportunities
+          </div>
+        </div>
+
+        <form class="contact-form scroll-reveal delay-2" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Name" required />
+              <span class="field-error" id="nameError">Please enter your name</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <span class="field-error" id="emailError">Please enter a valid email</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+            <span class="field-error" id="messageError">Please enter a message</span>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="submitBtn">
+            <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+          </button>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">AG<span class="dot">.</span></div>
+      <p class="footer-tagline">Building the future, one line at a time.</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:gerald@example.com"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Agonzebwa Gerald. Crafted with <i class="fas fa-heart" style="color:var(--accent)"></i> in Kampala.
+      </div>
+    </div>
+    <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
