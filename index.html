@@ -580,7 +580,7 @@
           </div>
         </div>
 
-        <form class="contact-form scroll-reveal delay-2" id="contactForm" novalidate>
+        <form class="contact-form scroll-reveal delay-2" id="contactForm" action="https://formspree.io/f/xyzqpwpr" method="POST" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name</label>
@@ -602,6 +602,8 @@
             <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
             <span class="field-error" id="messageError">Please enter a message</span>
           </div>
+          <input type="hidden" name="_subject" value="New Portfolio Message from {{name}}" />
+          <input type="hidden" name="_next" value="" />
           <button type="submit" class="btn-primary form-submit" id="submitBtn">
             <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
             <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>

@@ -221,11 +221,10 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(sec => sectionObserver.observe(sec));
 
-/* ── Contact Form Validation ── */
+/* ── Contact Form Validation & Submission ── */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
     let valid = true;
 
     const name    = document.getElementById('name');
@@ -265,14 +264,29 @@ if (contactForm) {
     btnLoading.style.display = 'flex';
     submitBtn.disabled = true;
 
-    // Simulate send (replace with actual endpoint)
-    await new Promise(r => setTimeout(r, 1600));
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(contactForm)
+      });
 
-    btnLoading.style.display = 'none';
-    submitBtn.style.display = 'none';
-    const successMsg = document.getElementById('formSuccess');
-    if (successMsg) successMsg.style.display = 'flex';
-    contactForm.reset();
+      if (response.ok) {
+        btnLoading.style.display = 'none';
+        submitBtn.style.display = 'none';
+        const successMsg = document.getElementById('formSuccess');
+        if (successMsg) successMsg.style.display = 'flex';
+        contactForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      btnLoading.style.display = 'none';
+      btnText.style.display = 'flex';
+      submitBtn.disabled = false;
+      alert('Error sending message. Please try again.');
+    }
   });
 }
 
