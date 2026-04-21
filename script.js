@@ -222,7 +222,11 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(sec => sectionObserver.observe(sec));
 
 /* ── Initialize EmailJS ── */
-emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
+if (typeof emailjs !== 'undefined') {
+  emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
+} else {
+  console.error('EmailJS library failed to load');
+}
 
 /* ── Contact Form Validation & Submission ── */
 const contactForm = document.getElementById('contactForm');
