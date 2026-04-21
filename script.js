@@ -222,85 +222,98 @@ const sectionObserver = new IntersectionObserver((entries) => {
 sections.forEach(sec => sectionObserver.observe(sec));
 
 /* ── Initialize EmailJS ── */
-if (typeof emailjs !== 'undefined') {
-  emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
-} else {
-  console.error('EmailJS library failed to load');
+function initEmailJS() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('HGHY78P43f-MukyAY'); // Initialize with public key
+    setupContactForm();
+  } else {
+    console.error('EmailJS library failed to load');
+    setTimeout(initEmailJS, 100); // Retry after 100ms
+  }
 }
 
 /* ── Contact Form Validation & Submission ── */
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    let valid = true;
+function setupContactForm() {
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
 
-    const name    = document.getElementById('name');
-    const email   = document.getElementById('email');
-    const subject = document.getElementById('subject');
-    const message = document.getElementById('message');
-    const nameErr = document.getElementById('nameError');
-    const emailErr = document.getElementById('emailError');
-    const msgErr  = document.getElementById('messageError');
+      const name    = document.getElementById('name');
+      const email   = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      const nameErr = document.getElementById('nameError');
+      const emailErr = document.getElementById('emailError');
+      const msgErr  = document.getElementById('messageError');
 
-    // Reset
-    [name, email, message].forEach(f => f.classList.remove('error'));
-    [nameErr, emailErr, msgErr].forEach(e => e.classList.remove('visible'));
+      // Reset
+      [name, email, message].forEach(f => f.classList.remove('error'));
+      [nameErr, emailErr, msgErr].forEach(e => e.classList.remove('visible'));
 
-    if (!name.value.trim()) {
-      name.classList.add('error');
-      nameErr.classList.add('visible');
-      valid = false;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value.trim())) {
-      email.classList.add('error');
-      emailErr.classList.add('visible');
-      valid = false;
-    }
-    if (!message.value.trim()) {
-      message.classList.add('error');
-      msgErr.classList.add('visible');
-      valid = false;
-    }
-
-    if (!valid) return;
-
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText   = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    btnText.style.display = 'none';
-    btnLoading.style.display = 'flex';
-    submitBtn.disabled = true;
-
-    try {
-      const templateData = {
-        from_name: name.value.trim(),
-        from_email: email.value.trim(),
-        subject: subject.value.trim() || 'No subject',
-        message: message.value.trim(),
-        reply_to: email.value.trim()
-      };
-      console.log('Sending to EmailJS:', templateData);
-      const response = await emailjs.send('service_57qlsdu', 'template_hhz0mx5', templateData);
-
-      if (response.status === 200) {
-        btnLoading.style.display = 'none';
-        submitBtn.style.display = 'none';
-        const successMsg = document.getElementById('formSuccess');
-        if (successMsg) successMsg.style.display = 'flex';
-        contactForm.reset();
-      } else {
-        throw new Error('Form submission failed');
+      if (!name.value.trim()) {
+        name.classList.add('error');
+        nameErr.classList.add('visible');
+        valid = false;
       }
-    } catch (error) {
-      console.error('Error:', error);
-      btnLoading.style.display = 'none';
-      btnText.style.display = 'flex';
-      submitBtn.disabled = false;
-      alert('Error sending message. Please try again.');
-    }
-  });
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        email.classList.add('error');
+        emailErr.classList.add('visible');
+        valid = false;
+      }
+      if (!message.value.trim()) {
+        message.classList.add('error');
+        msgErr.classList.add('visible');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText   = submitBtn.querySelector('.btn-text');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'flex';
+      submitBtn.disabled = true;
+
+      try {
+        const templateData = {
+          from_name: name.value.trim(),
+          from_email: email.value.trim(),
+          subject: subject.value.trim() || 'No subject',
+          message: message.value.trim(),
+          reply_to: email.value.trim()
+        };
+        console.log('Sending to EmailJS:', templateData);
+        const response = await emailjs.send('service_57qlsdu', 'template_hhz0mx5', templateData);
+
+        if (response.status === 200) {
+          btnLoading.style.display = 'none';
+          submitBtn.style.display = 'none';
+          const successMsg = document.getElementById('formSuccess');
+          if (successMsg) successMsg.style.display = 'flex';
+          contactForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        btnLoading.style.display = 'none';
+        btnText.style.display = 'flex';
+        submitBtn.disabled = false;
+        alert('Error sending message. Please try again.');
+      }
+    });
+  }
+}
+
+// Initialize EmailJS when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initEmailJS);
+} else {
+  initEmailJS();
 }
 
 /* ── Smooth Scroll for all anchor links ── */
